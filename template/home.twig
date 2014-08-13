@@ -1,0 +1,55 @@
+{%  extends "layout.twig" %}
+
+{% block messageStatus %}
+  {% if validation_ok is not null %}
+    {% if validation_ok %}
+      <div class="alert alert-success" role="alert">Project send!</div>
+
+    {% elseif validation_ok == false %}
+      <div class="alert alert-danger" role="alert">Somethings wrong!</div>
+      {% endif %}
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+	
+      
+
+
+
+        <div class="block-day">
+
+		<time class="date center" datetime="{{ "now"|date("Y-m-d") }}">
+  			<i class="fa fa-calendar"></i>
+            {{ "now"|date("l, F jS") }}
+        </time>
+
+		{% for project in todayProjects %}
+           {% include 'projects/block-project.twig' with { 'project': project } %}
+    {% endfor %}
+        
+    	</div>
+
+  <div class="next-day">
+
+    <time class="date center" datetime="{{ "now"|date_modify("-1 day")|date("Y-m-d") }}">
+        <i class="fa fa-calendar"></i>
+            {{ "now"|date_modify("-1 day")|date("l, F jS") }}
+        </time>
+
+    {% for project in yesterdayProjects %}
+           {% include 'projects/block-project.twig' with { 'project': project } %}
+    {% endfor %}
+        
+      </div>
+
+
+
+
+{%  endblock %}
+
+ {% block jsFooter %}
+ {% if user.logged %}
+  <script src="/static/js/artst.script.js?{{config.randomVar}}"></script>
+  {% endif %}
+ {% endblock %}

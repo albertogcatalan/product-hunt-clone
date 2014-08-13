@@ -1,0 +1,34 @@
+{%  extends "layout.twig" %}
+
+
+{% block body %}
+	<div class="container center">
+      
+        
+        <div class="user-profile">
+		  <a href="http://twitter.com/{{ profile.account}}">
+		    <img class="image-rounded" src="{{ profile.avatar }}" alt="{{ profile.name}}">
+		</a> 
+			<h2>{{ profile.name }}</h2>
+		  {% if profile.biography %}<p class="user-biography"> {{ profile.biography }}</p>{% endif %}
+		  {% if profile.location %}<p class="user-location"><i class="fa fa-map-marker"></i> {{ profile.location }}</p>{% endif %}
+		  {% if profile.web_link %}<p class="user-web"><i class="fa fa-link"></i> <a href="http://{{ profile.web_link }}" target="_blank">{{ profile.web_link }}</a></p>{% endif %}
+		  <p class="join-date"><i class="fa fa-clock-o"></i> Joined {{ profile.registered|date('F Y') }}</p>
+		  
+		</div>
+
+		
+			{% for project in pointsAdded %}
+	           {% include 'projects/block-project.twig' with { 'project': project } %}
+	    	{% endfor %}
+		
+     
+
+    </div>
+{%  endblock %}
+
+ {% block jsFooter %}
+  {% if user.logged %}
+  <script src="/static/js/artst.script.js?{{config.randomVar}}"></script>
+  {% endif %}
+{% endblock %}

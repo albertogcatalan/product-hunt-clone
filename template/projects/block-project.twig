@@ -1,0 +1,19 @@
+<div class="project center-block">
+  <div class="block-post">
+    {% include "projects/block-point.twig" %}
+    <div class="author">
+      <a href="/profile/{{ project.author.account }}" rel='tooltip' data-toggle="tooltip" data-placement="top" title="{{ project.author.name }} @{{ project.author.account }}">
+          <img alt="{{ project.author.name }}" class="image-rounded user-avatar" height="48" src="{{ project.author.avatar }}" width="48">
+      </a>
+    </div>
+    <div class="post">
+      <a class="url" href="/l/{{ project.id }}" target="_blank">{{ project.name() }}</a>
+      <span class="post-description">{{ project.description() }}</span>
+      <span class="post-actions">
+        <a href="/project/{{ project.slug }}" class="post-comments">
+          View Details
+        </a>
+      </span>
+    </div>
+  </div>
+</div>

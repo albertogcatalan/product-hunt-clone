@@ -1,0 +1,41 @@
+{% for comment in comments %}
+ <div class="media" id="comment-{{ comment.id }}">
+                <a class="pull-left" href="/profile/{{ comment._author.account }}">
+                   
+                  <img class="img-rounded" src="{{ comment._author.avatar }}" width="75" height="75" alt="Avatar {{ comment._author.name }}"/>
+                  
+
+                </a>
+                
+                <div class="media-body">
+                  
+                  <div class="pull-left"><h3 class="media-heading"><a href="/profile/{{ comment._author.account }}">{{ comment._author.name }} </a>  {% if comment._author.id == project.user %}<span class="label label-primary" style="padding:3px;">Owner</span> {% endif %}</h3></div>
+                  
+                  <div class="pull-right"><span style="color:#888; font-size:12px; margin-top:-10px;"><time datetime="{{ comment.date|date('Y-m-d H:i:s') }}">{{ comment.date|date('Y-m-d H:i:s') }}</time></span></div>
+                  <div class="clearfix"></div>
+                  
+                  <p class="comment-p">{{ comment.comment()|nl2br }}</p>
+                  
+                  <div id="actions" class="pull-left">
+                    <a href="{{ actual_url }}#add-comment" data-comment="{{ comment.id }}" data-author="{{ comment._author.name }}" style="font-size:12px;"><i class="fa fa-reply"></i> <b>Reply</b></a>
+                      
+                    </ul> 
+                  </div>
+                  
+                 
+                  
+                  <div class="clearfix"></div>
+                    
+                    <hr>
+                      {% if comment._replies %}
+          
+                  {% include "block-comment.twig" with { comments: comment._replies } %}
+        
+              {% endif %}
+
+                  
+                </div>
+              
+      </div>
+      
+{% endfor %}

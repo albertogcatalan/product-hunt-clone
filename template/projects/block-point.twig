@@ -1,0 +1,15 @@
+<div class="pointer">
+      <div class="point-content" data-id="{{ project.id }}">
+      {% if project.author.checkPoint(project.id, _user.id) %}
+        <a href="#" class="vote" data-id="{{ project.id }}" data-status="1" {% if user.logged == false %}
+        data-toggle="modal" data-target="#postModal" {% endif %}>
+        <i class="vote-icon-active fa fa-caret-square-o-up fa-2x"></i></a>
+      {% else %}
+        <a href="#" class="vote" data-id="{{ project.id }}" data-status="0" {% if user.logged == false %}
+        data-toggle="modal" data-target="#postModal" {% endif %}>
+        <i class="vote-icon fa fa-caret-square-o-up fa-2x"></i></a>
+
+      {% endif %}
+      </div>
+      <span class="vote-count" data-id="{{ project.id }}">{{ project.points }}</span>
+    </div>

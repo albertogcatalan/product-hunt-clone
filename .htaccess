@@ -1,0 +1,11 @@
+Options -Indexes
+
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule .* index.php 
+
+AddOutputFilterByType DEFLATE text/html text/plain text/xml text/javascript text/css
+AddType image/svg+xml svg
+AddType image/svg+xml svgz
