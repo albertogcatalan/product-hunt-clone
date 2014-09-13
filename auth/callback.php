@@ -1,5 +1,8 @@
 <?php
 require("../ajax.php");
+
+use Quaver\Model\User;
+
 /**
  * Callback for Opauth
  * 
@@ -90,12 +93,7 @@ else{
 		switch($response['auth']['provider']){	
 
 			case 'Twitter':
-				/*echo "<pre>";
-				print_r($response);
-				echo "</pre>";
-				exit;*/
-				
-				$user = new user;
+				$user = new User;
 			    
 				$_idU = $user->isRegistered($response['auth']['uid']);
 
@@ -140,13 +138,13 @@ else{
 		                // Logged in		                
 		                $user->setCookie();
 		               
-		                header("Location: http://".DOMAIN_TEST);
+		                header("Location: $goto");
 		                exit;    
 		            } else {
 		                // User not active
 		                $_error_login = true;
 		                $goTo = '/login/?user-disabled';
-		                header("Location: http://".DOMAIN_TEST."/?user-disabled");
+		                header("Location: /?user-disabled");
 		                exit;
 		            }
 			       		
@@ -198,7 +196,7 @@ else{
 			       		$user->setCookie();
 			       	}
 			       
-			       header("Location: http://".DOMAIN_TEST);
+			       header("Location: $goto");
 		           exit;
 				    				    
 			    }

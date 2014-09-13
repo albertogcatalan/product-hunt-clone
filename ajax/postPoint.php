@@ -7,6 +7,8 @@
 
 require("../ajax.php");
 
+use Quaver\Model\Project;
+
 if ($_user->logged){
 
 	$response = NULL;
@@ -22,7 +24,7 @@ if ($_user->logged){
 	if (isset($pid) && isset($uid) && isset($status)){
 		//$_date = date('Y-m-d', time());
 
-		$obj_p = new project;
+		$obj_p = new Project;
 		$actionPoint = $obj_p->actionPoint($pid, $uid, $status);
 
 		if ($actionPoint){

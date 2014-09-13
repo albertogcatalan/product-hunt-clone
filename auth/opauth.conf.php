@@ -23,7 +23,7 @@ $config = array(
 /**
  * A random string used for signing of $auth response.
  */
-	'security_salt' => 'projeggtevolution157342',
+	'security_salt' => 'yoursecuritysalt',
 		
 /**
  * Strategy
@@ -43,8 +43,8 @@ $config = array(
 	'Strategy' => array(
 		// Define strategies and their respective configs here
 		'Twitter' => array(
-			'key' => 'RE39nReAAgtv7m2y6XHaCkpMI',
-			'secret' => 'waFnWPcnnglOY6lAP7DXnVemmVhfvm6yGZgLW3zChlTVOFvTaR',
+			'key' => 'yourkey',
+			'secret' => 'yoursecretkey',
 		),
 
 	),
