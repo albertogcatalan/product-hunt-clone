@@ -138,7 +138,7 @@ else{
 		                // Logged in		                
 		                $user->setCookie();
 		               
-		                header("Location: $goto");
+		                header("Location: $goTo");
 		                exit;    
 		            } else {
 		                // User not active
@@ -196,7 +196,7 @@ else{
 			       		$user->setCookie();
 			       	}
 			       
-			       header("Location: $goto");
+			       header("Location: $goTo");
 		           exit;
 				    				    
 			    }

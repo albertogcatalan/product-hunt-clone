@@ -50,6 +50,6 @@ use Quaver\Core\Core;
 
 // Init core
 $core = new Core;
-$core->start();
+$core->start(false);
 
 ?>
