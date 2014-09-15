@@ -15,7 +15,7 @@ if (isset($_id)){
 	$obj_project = new project;
 	$p = $obj_project->getFromId($_id);
 
-	header("Location: " . $p->slug);
+	header("Location: " . $p->url);
 	exit;    	
 
 } else {
