@@ -50,12 +50,6 @@ define('DB_PASSWORD', 'mysql');
 define('DB_DATABASE', 'phclone');
 
 /*
- * Global variables DO NOT TOUCH
- */
-$_language = '';
-$_user = '';
-
-/*
  * External
  */
 
