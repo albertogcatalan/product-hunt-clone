@@ -28,7 +28,7 @@ $(function () {
 
 	    	$.ajax({
 	            type: 'POST',
-	            url:  '/ajax/postPoint.php',
+	            url:  '/Ajax/postPoint.php',
 	            async: false,
 	            dataType: "html",
 	            data: 
