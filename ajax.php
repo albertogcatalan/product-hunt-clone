@@ -23,7 +23,7 @@ if ( !file_exists('../Quaver/Config.php') || !file_exists('../Quaver/Autoloader.
 require_once('../Quaver/Autoloader.php');
 
 // Load configuration
-require_once('../Quaver/config.php');
+require_once('../Quaver/Config.php');
 
 // Check dev mode
 if (defined('DEV_MODE')) {       
