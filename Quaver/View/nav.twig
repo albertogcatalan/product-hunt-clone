@@ -1,0 +1,95 @@
+
+{% block nav %}
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">PH Clone</a>
+          <span class="navbar-brand subtitle hidden-xs hidden-sm">Share your projects</span>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            
+
+            {% if user.logged %}
+              <li><a data-toggle="modal" data-target="#postModal" href="#">Post a Project</a></li>
+              <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">@{{ user.account }} <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="/profile/{{ user.account }}">My profile</a></li>
+                <li><a href="/settings">Settings</a></li>
+                <li class="divider"></li>
+
+                {% if user.admin %}
+                <li><a href="/admin">Admin</a></li>
+                <li class="divider"></li>
+                {% endif %}
+                
+                <li class="dropdown-header">PH Clone</li>
+                <li><a href="/about">About</a></li>
+                <li class="divider"></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </li>
+            {% else %}
+              <li><a href="/about/">About</a></li>
+              <li><a data-toggle="modal" data-target="#postModal" href="#">Post a Project</a></li>
+              <li><a href="/auth/twitter">Login</a></li>
+            {% endif %}
+
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+
+    <!-- Modal -->
+<div class="modal fade" id="postModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Post a new Project</h4>
+      </div>
+
+      {% if user.logged %}
+      <form role="form" method="post" action="/">
+      <div class="modal-body">
+        
+      <div class="form-group">
+        <label for="url">Project URL</label>
+        <input type="text" class="form-control" name= "url" id="url" placeholder="http://www.myproject.com">
+      </div>
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="My project">
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" class="form-control" name="description" id="description" placeholder="My awesome project">
+      </div>
+      
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" name="postProject">Send</button>
+      </div>
+      </form>
+      {% else %}
+      <div class="modal-body center">
+        <p>Please log in before posting a project.</p>
+        <a href="/auth/twitter" class="btn btn-primary">Sign in with Twitter</a>
+      </div>
+
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+home:
+    url: /
+    controller: home
+
+404:
+    url: /404/
+    controller: e404
+
+profile:
+    url: /profile/([a-zA-Z0-9-_]+)?[/]?
+    controller: profiles/profile
+
+logout:
+    url: /logout/
+    controller: logout
+
+about:
+    url: /about/
+    controller: pages/about
+
+project:
+    url: /project/([a-zA-Z0-9-_]+)/([a-zA-Z0-9-_]+)?[/]?([a-zA-Z0-9-_]+)?[/]?([a-zA-Z0-9-_]+)?[/]?([a-zA-Z0-9-_]+)?[/]?([a-zA-Z0-9-_]+)?[/]?
+    controller: projects/main
+
+language:
+    url: /language/([a-zA-Z]{3})/
+    controller: language
+
+link:
+    url: /l/([a-zA-Z0-9-_]+)?[/]?
+    controller: projects/link
+
+settings:
+    url: /settings/
+    controller: profiles/settings
