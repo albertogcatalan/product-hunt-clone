@@ -16,7 +16,7 @@
       
 
 
-
+<div id="day-results">
         <div class="block-day">
 
 		<time class="date center" datetime="{{ "now"|date("Y-m-d") }}">
@@ -30,7 +30,7 @@
         
     	</div>
 
-  <div class="next-day">
+  <div class="block-day">
 
     <time class="date center" datetime="{{ "now"|date_modify("-1 day")|date("Y-m-d") }}">
         <i class="fa fa-calendar"></i>
@@ -43,6 +43,23 @@
         
       </div>
 
+      <div class="block-day">
+
+    <time class="date center" datetime="{{ "now"|date_modify("-2 day")|date("Y-m-d") }}">
+        <i class="fa fa-calendar"></i>
+            {{ "now"|date_modify("-2 day")|date("l, F jS") }}
+        </time>
+
+    {% for project in twoAgotwoAgo %}
+           {% include 'projects/block-project.twig' with { 'project': project } %}
+    {% endfor %}
+        
+      </div>
+   
+    <div class="animation_image" style="display:none" align="center">
+      <img src="{{ qv.img }}/ajax-loader.gif">x
+    </div>
+</div>
 
 
 
@@ -52,4 +69,5 @@
  {% if user.logged %}
   <script src="{{ qv.js }}/artst.script.js?{{ qv.randomVar }}"></script>
   {% endif %}
+  <script src="{{ qv.js }}/home.js?{{ qv.randomVar }}"></script>
  {% endblock %}

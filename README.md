@@ -13,6 +13,7 @@ Features
 * Post Projects with name, URL and description
 * Up votes
 * Comments
+* Auto load more data on page scroll
 * Multi language (Beta)
 
 
@@ -20,13 +21,12 @@ Comming soon
 ------------
 
 * Admin panel
-* Auto load more data on page scroll
 * Major support to multi language
 
 
 Install
 -------
-* Import `phclone.sql` and check `Quaver/config.php`
+* Import `phclone.sql` and check `Quaver/Config.php`
 * Configure your Twitter API Keys on `/auth/opauth.conf.php` ([more details](https://github.com/opauth/twitter))
 
 Note: The main page loads only 2 days but in the future will be added auto load more data on page scroll

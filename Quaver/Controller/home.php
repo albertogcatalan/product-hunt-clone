@@ -76,6 +76,14 @@ $yesterday = date ('Y-m-d', $yesterday);
 $yesterdayProjects = $obj_p->getLastProjects($yesterday);
 $this->addTwigVars('yesterdayProjects', $yesterdayProjects);
 
+// 2 days ago projects
+$twoDay = date('Y-m-d', time());
+$twoAgo = strtotime ('-2 day', strtotime($twoDay));
+$twoAgo = date ('Y-m-d', $twoAgo);
+
+$twoAgoProjects = $obj_p->getLastProjects($twoAgo);
+$this->addTwigVars('twoAgoProjects', $twoAgoProjects);
+
 
 $template = $this->twig->loadTemplate('home.twig');
 echo $template->render($this->twigVars);
