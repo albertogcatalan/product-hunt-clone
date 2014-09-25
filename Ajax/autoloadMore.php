@@ -16,9 +16,6 @@ $last_date = filter_var($_POST["last_date"], FILTER_SANITIZE_NUMBER_INT, FILTER_
 //set new project object
 $p = new Project;
 
-//Limit our results within a specified range.
-$results = $p->getLastProjects($last_date);
-
 // prepare day block   
 $datetime = DateTime::createFromFormat('Y-m-d', $last_date);
 $datetime->sub(new DateInterval('P1D'));
@@ -34,6 +31,9 @@ $headerBlock = '<div class="block-day">
         </time>';
 
 $footerBlock = '</div>';
+
+//Limit our results within a specified date
+$results = $p->getLastProjects($date);
 
 if ($results) { 
 
