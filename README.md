@@ -15,12 +15,12 @@ Features
 * Comments
 * Auto load more data on page scroll
 * Multi language (Beta)
+* Admin panel (only manage language strings)
 
 
-Comming soon
+Coming soon
 ------------
-
-* Admin panel
+* Stats
 * Major support to multi language
 
 
