@@ -1,0 +1,115 @@
+{% extends "aLayout.twig" %}
+
+{% block title %}Languages - PH Admin{% endblock %}
+
+    {% block head %}
+    
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.css"/>
+    <script type="text/javascript" language="javascript" src="//cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="//cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    
+    
+    <style>
+    
+    .table tbody tr:hover td, .table tbody tr:hover th {
+    background: rgb(197, 232, 255);
+}
+    </style>
+
+<script type="text/javascript">
+            $(function() {
+                
+                table = $('#items').dataTable({
+                    "aoColumns": [
+                        {},
+                        {},
+                        {},
+                        // Actions
+                        { "bSortable": false, "bSearchable": false }
+                    ],
+                    //"bFilter": false,
+                    "aaSorting": [
+                        [0, 'asc']
+                    ],
+                    "bStateSave": true,
+                    "bAutoWidth": false,
+                });
+                
+                 $("#items").on("click", ".delBtn", function(event) {
+                    event.preventDefault();
+                    var nRow = $(this).parents('tr')[0];
+                    aData = table.fnGetData(nRow);
+                                     
+                    $("#delBtnOK").attr("href", "/admin/languages/del/" + aData[1]);
+                    $(".registerN").text(aData[0]);
+                    
+                })
+                
+            })
+            
+            
+                
+        </script>
+{% endblock %}
+
+
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+ <div class="btn-group pull-right">
+        <a class="btn btn-info" href="/admin/languages/add"> New </a></div>
+          <h1 class="page-header">Lang Strings</h1>
+           
+          <div class="table-responsive">
+             <table cellpadding="0" cellspacing="0" border="0" class="table table-striped table-hover" id="items">
+            <thead>
+            <tr>
+                <th class="center">ID</th>
+                <th class="left">Label</th>
+                <th class="left">Text</th>
+                <th class="center"></th>                
+            </tr>
+            </thead>
+            <tbody>
+              {% for item in items %}
+                         <tr class="row-{{ item.id }}" id="row-{{ item.id }}">
+                <td class="center">{{ item.id }}</td>
+                <td class="center">{{ item.label }}</td>
+                <td class="center">{{ item.text }}</td>
+                <td class="center options">
+                <a class="btn btn-success" href="/admin/languages/edit/{{ item.label }}"><i class="fa fa-pencil"></i></a>
+                <a data-toggle="modal" data-target="#delModal" href="#" class="btn btn-danger delBtn" id="delete-{{ item.id }}"><i class="fa fa-trash"></i></a>
+                </td>
+            </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+          </div>
+        </div>
+
+         <!-- Modal -->
+<div class="modal fade" id="delModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Delete</h4>
+      </div>
+
+      
+      
+      <div class="modal-body">
+        
+      <p>Do you want continue?</p>
+      
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <a href="" class="btn btn-danger" id="delBtnOK">Delete</a>
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

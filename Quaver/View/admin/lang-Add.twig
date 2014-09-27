@@ -1,0 +1,56 @@
+{% extends "aLayout.twig" %}
+
+{% block title %}Languages - PH Admin{% endblock %}
+
+   
+
+
+{% block content %}
+<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+<form id="formCreator" action="" method="post" enctype="multipart/form-data" name="formCreator">
+    <div class="btn-group pull-right">
+        <button class="btn btn-success" name="{{ typePOST }}" type="submit"> Save</button>
+    </div>
+    
+    <h1 class="page-header">String: <a><b>{{ item[0].label }}</b></a> </h1>
+    
+    <div class="form-group">
+            <label for="label">Label (use this in your HTML)</label>
+            <input class="form-control" type="text" id="label" name="label" value="{{ item[0].label }}">
+        </div>
+
+    {% for tab in languages %}
+            
+            <input type="hidden" name="idL[]" id="idL" value="{{ item[tab.id-1].id }}" />
+            
+            <h2 class="page-subheader">{{ tab.locale }} </h2>
+        
+            <div class="form-group">
+                <label for="language">Language</label>
+                <input class="form-control" type="text" id="language" name="language[]" value="{{ item[tab.id-1].language }}">
+            </div>
+
+            <div class="form-group">
+                <label for="text">Text</label>
+                <textarea name="text[]" id="text" class="form-control">{{ item[tab.id-1].text }}</textarea>
+            </div>
+
+            <hr/>
+
+        {% endfor %}
+    
+
+
+        {% if item.id %}
+        <input type="hidden" name="id" id="id" value="{{ item[0].id }}" />
+        {% endif %}
+
+        </form>
+        
+        </div>
+
+
+{% endblock %}
+
+
+

@@ -33,3 +33,12 @@ link:
 settings:
     url: /settings/
     controller: profiles/settings
+
+admin_languages:
+    url: /admin/languages/([a-zA-Z0-9-_]+)?[/]?([a-zA-Z0-9-_]+)?[/]?
+    controller: admin/languages
+
+admin:
+    url: /admin/
+    controller: admin/main
+

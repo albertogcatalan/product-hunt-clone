@@ -18,6 +18,10 @@ if (isset($_POST['url']) &&  isset($_POST['title']) && isset($_POST['description
 		
 		$items['name'][1] = addslashes($_POST['title']);
 		$items['description'][1] = addslashes($_POST['description']);
+		/*foreach ($languages as $lang) {
+	        $items['name'][$lang->id] = addslashes($_POST['nameP_' . $lang->id]);
+	        $items['description'][$lang->id] = addslashes($project->description[$lang->id]);                
+	    }*/
 
 		if ($_POST['url']){
             
@@ -38,10 +42,6 @@ if (isset($_POST['url']) &&  isset($_POST['title']) && isset($_POST['description
 		$items['active'] = 1;
 		$items['cancelled'] = 0;
 			
-	    /*foreach ($languages as $lang) {
-	        $items['name'][$lang->id] = addslashes($_POST['nameP_' . $lang->id]);
-	        $items['description'][$lang->id] = addslashes($project->description[$lang->id]);                
-	    }*/
    	} else {
    		$error = true;
    	}    

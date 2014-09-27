@@ -29,8 +29,6 @@ Install
 * Import `phclone.sql` and check `Quaver/Config.php`
 * Configure your Twitter API Keys on `/auth/opauth.conf.php` ([more details](https://github.com/opauth/twitter))
 
-Note: The main page loads only 2 days but in the future will be added auto load more data on page scroll
-
 
 External Lib
 ------------
