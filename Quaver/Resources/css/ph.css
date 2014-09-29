@@ -155,10 +155,10 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) 
 and (orientation : landscape) {
 
-	.project .author {
+	.project .block-post .author {
 		display:none;
 	}
-	.project .post {
+	.project .block-post .post {
 		float: none;
 	}
 	
@@ -169,10 +169,10 @@ and (min-device-width : 320px)
 and (max-device-width : 480px) 
 and (orientation : landscape) { 
 
-	.project .author {
+	.project .block-post .author {
 		display:none;
 	}
-	.project .post {
+	.project .block-post .post {
 		float: none;
 	}
 }
