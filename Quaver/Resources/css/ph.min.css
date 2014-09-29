@@ -7,3 +7,6 @@ html{min-height:100%;padding-bottom:1px}body{padding-top:100px}.subtitle{font-si
 .project .post .post-description{color:#999;margin-left:5px}.project .post .post-comments{font-size:14px;margin-left:5px}.user-profile img{width:190px;height:190px}
 .center{text-align:center}.block-day{margin-bottom:60px}.project-content .author p{margin-top:15px}.project-content .author p span{position:relative;bottom:-2px}
 .project-content .project-description{font-size:22px}.user-votes{margin:0 3px 3px 0;float:left}.project-comment-button{margin-top:10px}.comment-p{line-height:17px;margin-top:5px;text-align:left}
+@media only screen and (min-device-width :320px) and (max-device-width :568px) and (orientation :landscape){.project .author{display:none}.project .post{float:none}
+}@media only screen and (min-device-width :320px) and (max-device-width :480px) and (orientation :landscape){.project .author{display:none}.project .post{float:none}
+}

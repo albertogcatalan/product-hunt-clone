@@ -147,3 +147,32 @@ body {
 	margin-top: 5px;
 	text-align: left;
 }
+
+/* Media queries
+================================================ */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 568px) 
+and (orientation : landscape) {
+
+	.project .author {
+		display:none;
+	}
+	.project .post {
+		float: none;
+	}
+	
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) 
+and (orientation : landscape) { 
+
+	.project .author {
+		display:none;
+	}
+	.project .post {
+		float: none;
+	}
+}
