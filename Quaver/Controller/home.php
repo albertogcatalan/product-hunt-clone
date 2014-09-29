@@ -72,7 +72,6 @@ $this->addTwigVars('todayProjects', $todayProjects);
 $yDay = date('Y-m-d', time());
 $yesterday = strtotime ('-1 day', strtotime($yDay));
 $yesterday = date ('Y-m-d', $yesterday);
-
 $yesterdayProjects = $obj_p->getLastProjects($yesterday);
 $this->addTwigVars('yesterdayProjects', $yesterdayProjects);
 
@@ -80,7 +79,6 @@ $this->addTwigVars('yesterdayProjects', $yesterdayProjects);
 $twoDay = date('Y-m-d', time());
 $twoAgo = strtotime ('-2 day', strtotime($twoDay));
 $twoAgo = date ('Y-m-d', $twoAgo);
-
 $twoAgoProjects = $obj_p->getLastProjects($twoAgo);
 $this->addTwigVars('twoAgoProjects', $twoAgoProjects);
 

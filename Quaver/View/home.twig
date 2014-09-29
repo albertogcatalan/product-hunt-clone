@@ -50,7 +50,7 @@
             {{ "now"|date_modify("-2 day")|date("l, F jS") }}
         </time>
 
-    {% for project in twoAgotwoAgo %}
+    {% for project in twoAgoProjects %}
            {% include 'projects/block-project.twig' with { 'project': project } %}
     {% endfor %}
         

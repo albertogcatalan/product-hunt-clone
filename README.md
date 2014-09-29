@@ -14,7 +14,7 @@ Features
 * Up votes
 * Comments
 * Auto load more data on page scroll
-* Multi language (Beta)
+* Multi language website	
 * Admin panel (only manage language strings)
 
 

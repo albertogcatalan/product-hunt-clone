@@ -336,9 +336,40 @@ class Project extends Base
         try {
 
             $db = new DB;
-            $obj_Lang = new Lang;
 
-            $languages = $obj_Lang->getLanguages();
+            $set = '';
+            $values = array();
+            $lid = 1;
+
+            foreach ($this->_language_fields as $field) {
+                if ($set != '') $set .= ', ';
+                $set .= "$field = :$field";
+                $values[$lid][":$field"] = $this->$field;
+            }
+
+            $values[$lid][":name"] = $values[$lid][":name"][$lid];
+            $values[$lid][":description"] = $values[$lid][":description"][$lid];
+            $values[$lid][":project"] = $this->id;
+            $values[$lid][":language"] = $lid;
+
+            $check = $db->query("SELECT id
+                    FROM " . $this->table_languages . "
+                    WHERE project = '" . $this->id . "'
+                        AND language = '" . $lid . "'");
+
+            $idLangProject = $check->fetchColumn(0);
+
+            if (!empty($idLangProject)) { // Already have languages
+                $values[$lid][":id"] = $idLangProject;
+                
+                $sql = "UPDATE " . $this->table_languages . " SET " . $set . " WHERE id = :id";
+            } else {
+                $sql = "INSERT INTO " . $this->table_languages . " SET " . $set;
+            }
+
+            $db->query($sql, $values[$lid]);
+            //$obj_Lang = new Lang;
+            /*$languages = $obj_Lang->getLanguages();
             foreach ($languages as $lang) {
                 $lid = $lang->id;
                 $text = array();
@@ -379,7 +410,7 @@ class Project extends Base
                 $db->query($sql, $values[$lid]);
 
                
-            }
+            }*/
 
             return true;
 
