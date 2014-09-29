@@ -1,6 +1,6 @@
 html{min-height:100%;padding-bottom:1px}body{padding-top:100px}.subtitle{font-size:16px;line-height:24px}.image-rounded{-webkit-border-radius:25%;-moz-border-radius:25%;-ms-border-radius:25%;-o-border-radius:25%;border-radius:25%}
 .date{text-transform:uppercase;margin-bottom:20px;display:block;padding-top:4px;position:relative;font-family:"Raleway","Helvetica Neue",Helvetica,Arial,sans-serif;font-weight:bold;line-height:1.1;color:inherit}
-.project{display:block;max-width:840px}.project .block-post{font-size:18px;padding:10px 0;height:50px;vertical-align:top;margin-bottom:13px}.project .pointer{float:left;width:60px;text-align:center;cursor:pointer}
+.project{display:block}.project .block-post{font-size:18px;padding:10px 0;height:50px;vertical-align:top;margin-bottom:13px}.project .pointer{float:left;width:60px;text-align:center;cursor:pointer}
 .pointer .vote-icon{position:relative;bottom:1px;display:inline-block;color:#bbb}.pointer .vote-icon-active{position:relative;bottom:1px;display:inline-block;color:#0853d4}
 .pointer .vote-icon-active:hover{color:#4582ec}.pointer .vote-icon:hover{color:#4582ec}.pointer .vote-count{font-size:14px;display:block;position:relative;bottom:5px}
 .project .author{float:left;width:60px}.project .author .user-image{position:relative;bottom:2px}.project .post{float:left;padding-top:8px}.project .post .url{border-bottom:1px solid rgba(0,0,0,0.1);text-decoration:none;font-weight:bold;font-size:22px}

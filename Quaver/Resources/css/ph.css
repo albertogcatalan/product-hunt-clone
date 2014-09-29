@@ -30,7 +30,6 @@ body {
 }
 .project {
 	display: block;
-	max-width: 840px;
 }
 
 .project .block-post {
@@ -145,6 +144,6 @@ body {
 
 .comment-p {
 	line-height: 17px;
-margin-top: 5px;
-text-align: left;
+	margin-top: 5px;
+	text-align: left;
 }
