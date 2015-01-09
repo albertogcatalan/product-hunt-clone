@@ -3,7 +3,7 @@ Product-Hunt Clone
 
 DEMO: [http://phclone.artistarter.com](http://phclone.artistarter.com)
 
-Product Hunt clone build with OLD version of [Quaver framework](https://github.com/millolab/quaver).
+Product Hunt clone build with OLD version (0.4) of [Quaver framework](https://github.com/millolab/quaver).
 
 Quaver is developed by [Alberto González](https://github.com/albertogonzcat) & [MilloLab](http://millolab.com), and distributed under MIT license.
 
@@ -29,6 +29,7 @@ Coming soon
 Install
 -------
 * Import `phclone.sql` and check `Quaver/Config.php`
+* REMEMBER: only works on root directory of domain or subdomain, if you want install on subfolder you must change Routes.yml and Resources paths of Config.php
 * Configure your Twitter API Keys on `/auth/opauth.conf.php` ([more details](https://github.com/opauth/twitter))
 
 
