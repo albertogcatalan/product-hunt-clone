@@ -1,11 +1,9 @@
 Product-Hunt Clone
 ==================
 
-DEMO: [http://phclone.artistarter.com](http://phclone.artistarter.com)
-
 Product Hunt clone build with OLD version (0.4) of [Quaver framework](https://github.com/millolab/quaver).
 
-Quaver is developed by [Alberto González](https://github.com/albertogonzcat) & [MilloLab](http://millolab.com), and distributed under MIT license.
+Quaver is developed by [Alberto González](https://github.com/albertogcatalan) & [MilloLab](http://millolab.com), and distributed under MIT license.
 
 Features
 --------
